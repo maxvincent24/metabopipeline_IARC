@@ -10,7 +10,7 @@ The pipeline is divised in three parts :
 
 ## 1 - Convert .d to .mzML files with dockerized msconvert
 
-
+Corresponding [README](https://github.com/maxvincent24/metabopipeline/tree/main/msconvert).
 
 
 ## 2 - Run metaboigniter pipeline
@@ -25,4 +25,3 @@ The pipeline is divised in three parts :
 
 
 
-<code></code>
