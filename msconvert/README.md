@@ -12,19 +12,19 @@ Slurm is the job scheduler of IARC's HPC. It allows to launch and monitor jobs, 
 For example, the data is organised as follows :
 
     data
-        ├── Batch1
-        │   ├── Blanks
-        │   │   ├── Blank_1.d
-        │   │   ├── Blank_2.d
-        │   ├── MSMS
-        │   │   ├── MSMS_1.d
-        │   │   ├── MSMS_2.d
-        │   ├── QCs
-        │   │   ├── QC_1.d
-        │   │   ├── QC_2.d
-        │   ├── Samples
-        │   │   ├── Sample_1.d
-        │   │   ├── Sample_2.d
+    ├── Batch1
+    │   ├── Blanks
+    │   │   ├── Blank_1.d
+    │   │   ├── Blank_2.d
+    │   ├── MSMS
+    │   │   ├── MSMS_1.d
+    │   │   ├── MSMS_2.d
+    │   ├── QCs
+    │   │   ├── QC_1.d
+    │   │   ├── QC_2.d
+    │   ├── Samples
+    │   │   ├── Sample_1.d
+    │   │   ├── Sample_2.d
 
 In this case, the command to launch to convert all _.d_ files is <code>sbatch slurm_msconvert.sb <absolute_or_relative_path>/data/Batch1</code>.
 
