@@ -1,0 +1,8 @@
+#!/bin/bash
+#SBATCH -J "msconvert"
+#SBATCH -c 4
+#SBATCH --mem=8GB
+
+singularity build --sandbox img_msconvert/ docker://chambm/pwiz-skyline-i-agree-to-the-vendor-licenses:3.0.21354-9ee14c7
+
+python3 dtomzML.py $1
