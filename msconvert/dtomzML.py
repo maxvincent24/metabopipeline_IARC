@@ -48,6 +48,6 @@ for file in list_d_files_msconvert:
 	output = '/'.join(file.replace(path_data_prefix, '')[1:].split('/')[:-1]).replace(path_data_basename, path_data_basename + '_mzML')
 	print(output)
 	print()
-	command = f'singularity run --writable --bind {pwd}:/data test_msconvert/ wine msconvert {file} --filter "peakPicking true 1" -o {output}'
+	command = f'singularity run --writable --bind {pwd}:/data img_msconvert/ wine msconvert {file} --filter "peakPicking true 1" -o {output}'
 	print(command)
 	subprocess.run(command.split(' '))
