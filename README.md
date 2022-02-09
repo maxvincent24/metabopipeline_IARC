@@ -20,7 +20,7 @@ Corresponding [README](https://github.com/maxvincent24/metabopipeline/tree/main/
 
 ## 3 - Jupyter notebooks to identify potential biomarkers
 
-
+Corresponding [README](https://github.com/maxvincent24/metabopipeline/tree/main/notebooks).
 
 
 
