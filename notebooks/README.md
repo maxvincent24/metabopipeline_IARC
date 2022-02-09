@@ -4,8 +4,12 @@ Now that we have our peak table, identification and the associated metadata, we 
 
 In the available notebooks, the point is to explore the data we got from _metaboigniter_, apply statistical analysis and machine learning models.
 
+For this part, two options to use the notebooks are available :
+- option 1 : Pull and use a Singularity image
+- option 2 : Launch each notebook in Binder
 
-## Environment installation
+
+## Option 1 - Singularity image
 
 First, open a terminal on your local machine and connect to IARC's HPC with _ssh_ using the following command :
 ```bash
@@ -50,4 +54,17 @@ A Jupyter session should appear, we can navigate in the subfolders to <code>./me
 
 The notebooks can now be launched :muscle:
 
+
+
+
+
+## Option 2 - Binder
+
+To launch each notebook, just click on the button next to the notebook name :
+- 0-parent_notebook.ipynb [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/maxvincent24/metabopipeline/HEAD?labpath=notebooks%2Fnotebooks_binder%2Fnotebooks%2F0-parent_notebook.ipynb)
+- 1-clean_HILIC_POS_peakTable.ipynb
+- 2-explore_data.ipynb
+- 2-2-first_models.ipynb
+- 3-missing_value_imputation.ipynb
+- 4-normalisation_scaling.ipynb
 
