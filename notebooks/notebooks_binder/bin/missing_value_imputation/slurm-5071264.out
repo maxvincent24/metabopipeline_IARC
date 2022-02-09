@@ -1,0 +1,38 @@
+[1] "/home/vincentm/MLnotebooks/metabopipeline_notebooks/data/peakTable/original_peak_table/peakTable_HILIC_POS.csv"
+[1] "."
+[1] "c('pmm','norm')"
+[1] "pmm"  "norm"
+Le chargement a nécessité le package : mice
+
+Attachement du package : ‘mice’
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+The following objects are masked from ‘package:base’:
+
+    cbind, rbind
+
+Le chargement a nécessité le package : sjmisc
+----------------------------------------------------------------------------------------------------
+----------------------------------------------- pmm ------------------------------------------------
+...Computing...
+...............
+3 min 1 sec
+----------------------------------------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------------- norm -----------------------------------------------
+...Computing...
+...............
+2 min 58 sec
+----------------------------------------------------------------------------------------------------
+
+
+
+Warning messages:
+1: Number of logged events: 4040 
+2: Number of logged events: 3993 

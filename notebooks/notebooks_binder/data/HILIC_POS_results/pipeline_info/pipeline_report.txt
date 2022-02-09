@@ -1,0 +1,48 @@
+----------------------------------------------------
+                                        ,--./,-.
+        ___     __   __   __   ___     /,-._.--~\
+  |\ | |__  __ /  ` /  \ |__) |__         }  {
+  | \| |       \__, \__/ |  \ |___     \`-._,-`-,
+                                        `._,._,'
+  nf-core/metaboigniter v1.0.1
+----------------------------------------------------
+
+Run Name: agitated_mestorf
+
+## nf-core/metaboigniter execution completed successfully! ##
+
+
+The workflow was completed at 2021-06-14T17:23:12.465+02:00 (duration: 39m 20s)
+
+The command used to launch the workflow was as follows:
+
+  nextflow run metaboigniter/main.nf -c metaboigniter/conf/custom.config -profile singularity
+
+
+
+Pipeline Configuration:
+-----------------------
+ - Run Name: agitated_mestorf
+ - Type of ionization: pos
+ - Path to mzML quantification files (positive): data/mzML_POS_Quant/*.mzML
+ - Path to mzML identification files (positive): data/mzML_POS_ID/*.mzML
+ - Max Resources: 256 GB memory, 80 cpus, 10d time per job
+ - Container: singularity - nfcore/metaboigniter:1.0.1
+ - Output dir: ./results
+ - Launch dir: /home/vincentm/run_metaboigniter/HILIC_POS
+ - Working dir: /home/vincentm/run_metaboigniter/HILIC_POS/work
+ - Script dir: /home/vincentm/run_metaboigniter/HILIC_POS/metaboigniter
+ - User: vincentm
+ - Config Profile: singularity
+ - Config Files: /home/vincentm/.nextflow/config, /home/vincentm/run_metaboigniter/HILIC_POS/metaboigniter/nextflow.config, /home/vincentm/run_metaboigniter/HILIC_POS/metaboigniter/conf/custom.config
+ - Date Started: 2021-06-14T16:43:52.389+02:00
+ - Date Completed: 2021-06-14T17:23:12.465+02:00
+ - Pipeline script file path: /home/vincentm/run_metaboigniter/HILIC_POS/metaboigniter/main.nf
+ - Pipeline script hash ID: 85cc24ebd104130f2d123a78ef7f2328
+ - Nextflow Version: 20.10.0
+ - Nextflow Build: 5430
+ - Nextflow Compile Timestamp: 01-11-2020 15:14 UTC
+
+--
+nf-core/metaboigniter
+https://github.com/nf-core/metaboigniter
