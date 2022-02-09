@@ -41,7 +41,7 @@ To launch a Jupyter session, we use this command :
 ```bash
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
 ```
-A few lines will be displayed, in particular some URLs. Copy and paste the one with this form in a browser <code>http://127.0.0.1:8888/?token=<blablabla></code>.
+A few lines will be displayed, in particular some URLs. Copy and paste the one with this form in a browser <code>http://127.0.0.1:8888/?token=&#60;blablabla&#62;</code>.
 
 
 A Jupyter session should appear, we can navigate in the subfolders to <code>./metabopipeline_notebooks/home/ML_pipeline/</code> to access notebooks and useful python scripts. Needed packages are installed with specified versions, no need to manage package version, everything is already done :sunglasses:
