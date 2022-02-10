@@ -26,7 +26,10 @@ For example, the data is organised as follows :
     │   │   ├── Sample_1.d
     │   │   ├── Sample_2.d
 
-In this case, the command to launch to convert all _.d_ files is <code>sbatch slurm_msconvert.sb <absolute_or_relative_path>/data/Batch1</code>.
+In this case, the command to launch to convert all _.d_ files is
+```bash
+sbatch slurm_msconvert.sb <absolute_or_relative_path>/data/Batch1
+```
 
 The <code>sbatch</code> command submits a slurm job with a shell script (<code>slurm_msconvert.sb</code> here), which will (as mentioned above) create the Singularity image for _msconvert_ and launches the python script with the path to data as argument.
 
