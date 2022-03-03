@@ -15,6 +15,8 @@ First, open a terminal on your local machine and connect to IARC's HPC with _ssh
 ```bash
 ssh <user>@10.120.1.20 -L 8888:127.0.0.1:8888
 ```
+The <code>-L</code> option specifies which port on client (local) will be forwarded to which host and port on remote ([cf doc](https://explainshell.com/explain?cmd=ssh+-L)).
+
 
 Next, change directory :
 
