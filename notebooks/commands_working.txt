@@ -1,0 +1,23 @@
+
+On local machine :
+ssh vincentm@10.120.1.20 -L 8888:127.0.0.1:8888
+
+
+On HPC :
+cd <path_to_workdir>
+singularity build --sandbox metabopipeline_notebooks docker://maxvin/metabopipeline_notebooks:latest
+singularity run metabopipeline_notebooks/
+
+
+On HPC, inside image :
+jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+
+
+In browser, copy :
+http://127.0.0.1:8888/?token=<blablabla>
+
+
+Jupyter notebook with container config should launch :)
+
+
+
