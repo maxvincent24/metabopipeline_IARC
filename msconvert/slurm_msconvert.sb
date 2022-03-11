@@ -1,6 +1,4 @@
 #!/bin/bash
 #SBATCH -J "msconvert"
-#SBATCH -c 4
-#SBATCH --mem=8GB
 
 python3 dtomzML.py $1
