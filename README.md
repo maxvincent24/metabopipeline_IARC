@@ -27,7 +27,7 @@ iarc_squeue -u <your_username>
 
 If you don't see a job named "run_install", it surely means everything worked well :wink:
 
-You'll find the two images 
+
 
 ## 1 - Convert .d to .mzML files with dockerized msconvert
 
