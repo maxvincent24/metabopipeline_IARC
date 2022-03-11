@@ -8,6 +8,27 @@ The pipeline is divised in three parts :
 - notebooks : in Jupyter notebooks, we can explore, process and analyse the output of metaboigniter, using python and R languages.
 
 
+## 0 - Install singularity images
+
+Before using the pipeline, you have to run the shell script <code>run_install.sb</code> as a slurm job, using the following command :
+```bash
+sbatch run_install.sb
+```
+
+This script will pull and convert two Docker images to Singularity images. Singularity is a container runtime, like Docker, and is the one deployed on IARC's HPC :
+- the first image is the <a href="https://hub.docker.com/r/chambm/pwiz-skyline-i-agree-to-the-vendor-licenses" target="_blank">Proteowizard docker image</a>. The Singularity image will be created and will be seen in the subfolder <code>msconvert/img_msconvert</code>;
+- the second image is an image created for data science (<a href="https://hub.docker.com/r/maxvin/data_science_img" target="_blank">link to DockerHub</a>), with Python, R and Julia deployed in a JupyterLab environment. The Singularity image will be created and will be seen in the subfolder <code>notebooks/MLnotebooks_img</code>
+
+
+You can follow the advancement of the slurm job with the following command, displaying all your current running jobs :
+```bash
+iarc_squeue -u <your_username>
+```
+
+If you don't see a job named "run_install", it surely means everything worked well :wink:
+
+You'll find the two images 
+
 ## 1 - Convert .d to .mzML files with dockerized msconvert
 
 Corresponding [README](https://github.com/maxvincent24/metabopipeline/tree/main/msconvert).
