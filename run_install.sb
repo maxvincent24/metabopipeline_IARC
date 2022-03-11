@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH -J "run_install"
+#SBATCH -c 2
+#SBATCH --mem=8GB
+
+# Pull Proteowizard docker image for msconvert
+singularity build --sandbox msconvert/img_msconvert/ docker://chambm/pwiz-skyline-i-agree-to-the-vendor-licenses:3.0.21354-9ee14c7
+
+# Pull docker image for ML notebooks
+singularity build --sandbox notebooks/MLnotebooks_img docker://maxvin/data_science_img:0.2.1
+
+
