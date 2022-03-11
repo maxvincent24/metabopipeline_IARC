@@ -3,11 +3,10 @@
 
 This folder contains a shell script (<code>slurm_msconvert.sb</code>) and a python script (<code>dtomzML.py</code>).
 
-The shell script (extension _.sb_) contains slurm options and two commands.
+The shell script (extension _.sb_) contains slurm options and one command.
 
-Slurm is the job scheduler of IARC's HPC. It allows to launch and monitor jobs, manage job parallelisation, allocate specific resources (computer nodes) to users. The first few lines of the file _slurm_msconvert.sb_ (starting with <code>#</code>) specify slurm options (job name, number of nodes, memory, ...). Then, the other lines are linux commands :
-- the first one pulls <a href="https://hub.docker.com/r/chambm/pwiz-skyline-i-agree-to-the-vendor-licenses" target="_blank">Proteowizard docker image</a> and converts the __Docker__ image to a __Singularity__ image. Singularity is a container runtime, like Docker, and is the one deployed on IARC's HPC. The Singularity image will be created and can be seen in the subfolder <code>img_msconvert</code>;
-- the second one launches the python script (<code>dtomzML.py</code>), which will convert all _.d_ files in the folder (and its subfolders) passed as argument.
+Slurm is the job scheduler of IARC's HPC. It allows to launch and monitor jobs, manage job parallelisation, allocate specific resources (computer nodes) to users. The first few lines (starting with <code>#</code>) of a slurm file (here _slurm_msconvert.sb_) specify slurm options (job name, number of nodes, memory, ...). Then, the other lines are linux commands (here we just have one) :
+- the command launches the python script (<code>dtomzML.py</code>), which will convert all _.d_ files in the folder (and its subfolders) passed as argument.
 
 For example, the data is organised as follows :
 
