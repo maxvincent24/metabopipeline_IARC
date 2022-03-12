@@ -1,0 +1,5 @@
+*.DS_Store
+*.out
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
