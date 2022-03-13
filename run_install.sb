@@ -8,4 +8,4 @@ singularity build --sandbox msconvert/img_msconvert/ docker://chambm/pwiz-skylin
 singularity build --sandbox notebooks/MLnotebooks_img docker://maxvin/data_science_img:0.2.1
 
 ## Pull metabopipeline notebooks GitHub repo inside the MLnotebooks_img Singularity image
-git clone https://github.com/maxvincent24/metabopipeline_notebooks.git notebooks/MLnotebooks_img/home/joyvan/work
+git clone https://github.com/maxvincent24/metabopipeline_notebooks.git notebooks/MLnotebooks_img/home/jovyan/work
