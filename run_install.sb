@@ -1,10 +1,11 @@
 #!/bin/bash
 #SBATCH -J "run_install"
 
-# Pull Proteowizard docker image for msconvert
+## Pull Proteowizard docker image for msconvert
 singularity build --sandbox msconvert/img_msconvert/ docker://chambm/pwiz-skyline-i-agree-to-the-vendor-licenses:3.0.21354-9ee14c7
 
-# Pull docker image for ML notebooks
+## Pull docker image for ML notebooks
 singularity build --sandbox notebooks/MLnotebooks_img docker://maxvin/data_science_img:0.2.1
 
-
+## Pull metabopipeline notebooks GitHub repo inside the MLnotebooks_img Singularity image
+git clone https://github.com/maxvincent24/metabopipeline_notebooks.git notebooks/MLnotebooks_img/home/joyvan/work
