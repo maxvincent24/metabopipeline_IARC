@@ -2,6 +2,5 @@
 #SBATCH -J "msconvert"
 
 file="./run_commands_"$1".sh"
-echo $file
 
 $file $2
