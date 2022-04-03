@@ -38,7 +38,7 @@ First, in a terminal, navigate to the directory containing your data folder (wit
 
 The first option is to use the container with Docker.
 
-The only command to run is :
+You can clone the repository, then the only command to run is :
 
 ```bash
 ./run_commands_docker.sh data
@@ -49,12 +49,25 @@ The <code>data</code> corresponds to the data folder name.
 The output folder containing <code>.mzML</code> files is created in the current working directory and named *<data_folder_name>\_mzML* (<code>data_mzML</code> for the example).
 
 
+You can also run the command lines yourself, without the <code>run_commands_docker.sh</code> file.
+
+First, you pull the docker image from the [DockerHub](https://hub.docker.com/r/maxvin/msconvert_img) :
+```bash
+docker pull maxvin/msconvert_img:0.1.4
+```
+
+Then, you run the docker image by passing your data folder as argument :
+```bash
+docker run -t -v $PWD:/home/msconvert/data maxvin/msconvert_img:0.1.4 python3 -u dtomzML.py <data_folder_name>
+```
+
+
 
 ## Option 2 : Use Singularity
 
 The second option is to use the container with Singularity.
 
-The only command to run is :
+You can clone the repository, the only command to run is :
 
 ```bash
 ./run_commands_singularity.sh data
@@ -64,6 +77,18 @@ The <code>data</code> corresponds to the data folder name.
 
 The output folder containing <code>.mzML</code> files is created in the current working directory and named *<data_folder_name>\_mzML* (<code>data_mzML</code> for the example).
 
+
+You can also run the command lines yourself, without the <code>run_commands_singularity.sh</code> file.
+
+First, you pull the docker image from the [DockerHub](https://hub.docker.com/r/maxvin/msconvert_img) and build the singularity image from it :
+```bash
+singularity build maxvin_msconvert_img.sif docker://maxvin/msconvert_img:0.1.4
+```
+
+Then, you run the singularity image by passing your data folder as argument :
+```bash
+docker run -t -v $PWD:/home/msconvert/data maxvin/msconvert_img:0.1.4 python3 -u dtomzML.py <data_folder_name>
+```
 
 
 
