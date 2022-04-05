@@ -9,5 +9,4 @@ if [[ ! -d ./metabopipeline_notebooks ]]; then
     git clone https://github.com/maxvincent24/metabopipeline_notebooks.git
 fi
 
-singularity exec --bind "${PWD}"/metabopipeline_notebooks:/home/jovyan/work maxvin_msconvert_img.sif
-
+singularity run --bind "${PWD}"/metabopipeline_notebooks:/home/jovyan/work maxvin_data_science_img.sif
