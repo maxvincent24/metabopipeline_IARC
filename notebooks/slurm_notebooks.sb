@@ -1,0 +1,6 @@
+#!/bin/bash
+#SBATCH -J "notebooks"
+
+file="./run_commands_"$1".sh"
+
+$file $2
