@@ -2,7 +2,7 @@
 
 if [[ ! -f ./maxvin_data_science_img.sif ]]
 then
-    singularity build maxvin_data_science_img.sif docker://maxvin/data_science_img:0.3.1
+    singularity build maxvin_data_science_img.sif docker://maxvin/data_science_img:0.1.5
 fi
 
 if [[ ! -d ./metabopipeline_notebooks ]]; then
