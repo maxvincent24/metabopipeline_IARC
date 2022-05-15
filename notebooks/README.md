@@ -1,15 +1,21 @@
 # 3 - Jupyter notebooks to identify potential biomarkers
 
+
 Now that we have our peak table, identification and the associated metadata, we can use apply various machine learning methods to identify potential biomarkers. The objective is to find compounds which differentiate __Patient__ and __Control__ samples.
 
 In the available notebooks, the point is to explore the data we got from _metaboigniter_, apply statistical analysis and machine learning models.
 
-For this part, two options to use the notebooks are available :
-- option 1 : Pull and use a Singularity image
-- option 2 : Launch each notebook in Binder
 
+This folder contains 3 scripts :
+- <code>run_commands_docker.sh</code>
+- <code>run_commands_singularity.sh</code>
+- <code>slurm_notebooks.sb</code>
 
-## Option 1 - Singularity image
+The first two scripts (<code>run_commands_docker.sh</code> and <code>run_commands_singularity.sh</code>) contain the command to pull the docker image from the DockerHub, and convert it to a Singularity image if Singularity is used. These two scripts also contain the command to run the image to launch the Jupyter notebooks, which will create an URL to paste in a browser to access JupyterLab.
+
+The script with the _.sb_ extension contains slurm options and commands to use the above scripts via Slurm.
+Slurm is the job scheduler of IARC's HPC. It allows to launch and monitor jobs, manage job parallelisation, allocate specific resources (computer nodes) to users. The first few lines (starting with <code>#</code>) of a slurm file (here code>slurm_msconvert.sb</code>) specify slurm options (job name, number of nodes, memory, ...). Then, the other lines are linux commands, here to launch <code>run_commands_docker.sh</code> or <code>run_commands_singularity.sh</code>.
+
 
 First, open a terminal on your local machine and connect to IARC's HPC with _ssh_ using the following command :
 ```bash
@@ -24,45 +30,74 @@ Next, change directory :
 cd <absolute_or_relative_path>/notebooks
 ```
 
-Then, the following command will pull the __Docker__ image containing all the environment needed to use the __Jupyter notebooks__ and convert it to a __Singularity__ image, to be used on IARC's HPC.
-```bash
-singularity build --sandbox metabopipeline_notebooks docker://maxvin/metabopipeline_notebooks:latest
-```
-Building the image should take a few minutes. The Singularity image will be created and can be seen in the subfolder <code>metabopipeline_notebooks</code>.
 
-Then, the image can be run interactively with the following command :
-```bash
-singularity run metabopipeline_notebooks/
-```
+At this point you have four options to use the notebooks :
+- option 1 : Use Docker
+- option 2 : Use Singularity
+- option 3 : Launch notebooks with Slurm
+- option 4 : Launch each notebook in Binder
 
-The prompt, the short text message at the start of the command line (e.g. <code>vincentm@hn:~ $</code>) on IARC's HPC, will change to a sober <code>Singularity></code>. At this point, all commands run in the terminal are run inside the Singularity image.
 
-By running (inside the image)
-```bash
-ls -la metabopipeline_notebooks/
-```
-we can see that the image is based on an Ubuntu image.
+## Option 1 - Use Docker
 
-To launch a Jupyter session, we use this command :
+The first option is to use the container with Docker.
+
+First, you have to clone this repository, then the only command to run is :
+
 ```bash
-jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
-```
-A few lines will be displayed, in particular some URLs. Copy and paste the one with this form in a browser
-```bash
-http://127.0.0.1:8888/?token=<blablabla> 
+./run_commands_docker.sh
 ```
 
-A Jupyter session should appear, we can navigate in the subfolders to <code>./metabopipeline_notebooks/home/ML_pipeline/</code> to access notebooks and useful python scripts. Needed packages are installed with specified versions, no need to manage package version, everything is already done :sunglasses:
+It could take a while to launch the Jupyter environment if it is the first time. First, it will pull and build the Docker image based on the image on [DockerHub](https://hub.docker.com/r/maxvin/data_science_img).
 
-The notebooks can now be launched :muscle:
+Then, it will clone the repository containing the Jupyter notebooks [link](https://github.com/maxvincent24/metabopipeline_notebooks).
+
+Finally, it will run the Docker image, launching a JupyterLab environment to use the notebooks. On your terminal will appear a URL of this form <code>http://127.0.0.1:8888/lab?token=*token*</code> that you will have to paste in a browser to launch the JupyterLab session.
+
+
+
+## Option 2 - Use Singularity
+
+The second option is to use the container with Singularity.
+
+First, you have to clone this repository, then the only command to run is :
+
+```bash
+./run_commands_singularity.sh
+```
+
+It could take a while to launch the Jupyter environment if it is the first time. First, it will pull the Docker image from [DockerHub](https://hub.docker.com/r/maxvin/data_science_img) and build the Singularity image.
+
+Then, it will clone the repository containing the Jupyter notebooks [link](https://github.com/maxvincent24/metabopipeline_notebooks).
+
+Finally, it will run the Singularity image, launching a JupyterLab environment to use the notebooks. On your terminal will appear a URL of this form <code>http://127.0.0.1:8888/lab?token=*token*</code> that you will have to paste in a browser to launch the JupyterLab session.
 
 
 
 
 
-## Option 2 - Binder
+## Option 3 - Launch notebooks with Slurm
 
-The notebooks and their links to Binder can be found on this repository : [maxvincent24/metabopipeline_notebooks_binder](https://github.com/maxvincent24/metabopipeline_notebooks_binder)
+The third option is to launch the notebooks using Slurm.
+
+The only command to run is :
+
+```bash
+sbatch slurm_notebooks.sb <container_choice>
+```
+
+The argument <code>container_choice</code> is either "docker" or "singularity", depending on which technology you wnat to use.
+
+Depending on the container choice, it will run either the file <code>run_commands_docker.sh</code> or <code>run_commands_singularity.sh</code>. In the <code>.out</code> file of your slurm job, you will see a URL of this form <code>http://127.0.0.1:8888/lab?token=*token*</code> that you will have to paste in a browser to launch the JupyterLab session.
+
+
+
+
+
+
+## Option 4 - Launch each notebook in Binder
+
+The notebooks and their links to Binder can be found on this repository : [maxvincent24/metabopipeline_notebooks](https://github.com/maxvincent24/metabopipeline_notebooks)
 
 
 
