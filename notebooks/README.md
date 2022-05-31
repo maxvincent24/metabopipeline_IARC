@@ -1,9 +1,9 @@
 # 3 - Jupyter notebooks to identify potential biomarkers
 
 
-Now that we have our peak table, identification and the associated metadata, we can use apply various machine learning methods to identify potential biomarkers. The objective is to find compounds which differentiate __Patient__ and __Control__ samples.
+Now that we have our peak table, identification and the associated metadata, we can apply various machine learning methods to identify potential biomarkers. The objective is to find compounds which differentiate __Patient__ and __Control__ samples.
 
-In the available notebooks, the point is to explore the data we got from _metaboigniter_, apply statistical analysis and machine learning models.
+In the available notebooks, the point is to explore the data we got from _metaboigniter_, apply statistical analysis, visualisations and machine learning models.
 
 
 This folder contains 3 scripts :
@@ -11,11 +11,13 @@ This folder contains 3 scripts :
 - <code>run_commands_singularity.sh</code>
 - <code>slurm_notebooks.sb</code>
 
-The first two scripts (<code>run_commands_docker.sh</code> and <code>run_commands_singularity.sh</code>) contain the command to pull the docker image from the DockerHub, and convert it to a Singularity image if Singularity is used. These two scripts also contain the command to run the image to launch the Jupyter notebooks, which will create an URL to paste in a browser to access JupyterLab.
+The first two scripts (<code>run_commands_docker.sh</code> and <code>run_commands_singularity.sh</code>) contain the command to pull the docker image from the DockerHub, and convert it to a Singularity image if Singularity is chosen. These two scripts also contain the command to run the image, which will create an URL to paste in a browser to access notebooks in a JupyterLab environment.
 
 The script with the _.sb_ extension contains slurm options and commands to use the above scripts via Slurm.
-Slurm is the job scheduler of IARC's HPC. It allows to launch and monitor jobs, manage job parallelisation, allocate specific resources (computer nodes) to users. The first few lines (starting with <code>#</code>) of a slurm file (here code>slurm_msconvert.sb</code>) specify slurm options (job name, number of nodes, memory, ...). Then, the other lines are linux commands, here to launch <code>run_commands_docker.sh</code> or <code>run_commands_singularity.sh</code>.
+Slurm is the job scheduler of IARC's HPC. It allows to launch and monitor jobs, manage job parallelisation, allocate specific resources (computer nodes) to users. The first few lines (starting with <code>#</code>) of a slurm file (here <code>slurm_msconvert.sb</code>) specify slurm options (job name, number of nodes, memory, ...). Then, the other lines are linux commands, here to launch <code>run_commands_docker.sh</code> or <code>run_commands_singularity.sh</code>.
 
+
+## Tutorial
 
 First, open a terminal on your local machine and connect to IARC's HPC with _ssh_ using the following command :
 ```bash
@@ -24,10 +26,9 @@ ssh <user>@10.120.1.20 -L 8888:127.0.0.1:8888
 The <code>-L</code> option specifies which port on client (local) will be forwarded to which host and port on remote ([cf doc](https://explainshell.com/explain?cmd=ssh+-L)).
 
 
-Next, change directory :
-
+Next, go to the directory where you previsouly cloned the repository, and inside <code>notebooks</code> subfolder :
 ```bash
-cd <absolute_or_relative_path>/notebooks
+cd <path_to_repo>/metabopipeline_IARC/notebooks
 ```
 
 
