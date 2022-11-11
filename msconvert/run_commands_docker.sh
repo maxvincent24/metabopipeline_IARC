@@ -1,6 +1,6 @@
 #!/bin/bash
 
-img="maxvin/msconvert_img:0.1.4"
+img="maxvin/msconvert_img:0.1.5"
 
 if [[ "$(docker images -q ${img} 2> /dev/null)" == "" ]]; then
   docker pull ${img}
