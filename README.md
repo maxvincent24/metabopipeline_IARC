@@ -11,15 +11,21 @@ The pipeline is divised in three parts :
 
 ## 1 - Convert .d to .mzML files with dockerized msconvert
 
+This part allows to easily convert files from Agilent vendor format *.d* to open-source format *.mzML*.
+
 Corresponding [README](https://github.com/maxvincent24/metabopipeline/tree/main/msconvert).
 
 
 ## 2 - Run metaboigniter pipeline
 
+This part allows to preprocess *.mzML* files with *metaboigniter* pipeline, giving peak tables as output : table of feature intensities for each sample.
 
+**For now, _metaboigniter_ part is still in development.**
 
 
 ## 3 - Jupyter notebooks to identify potential biomarkers
+
+This part allows to launch a JupyterLab session, with notebooks to analyse peak tables.
 
 Corresponding [README](https://github.com/maxvincent24/metabopipeline/tree/main/notebooks).
 
